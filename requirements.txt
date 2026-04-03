@@ -1,0 +1,6 @@
+streamlit
+groq
+PyPDF2
+edge-tts
+streamlit-mic-recorder
+fpdf
