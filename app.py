@@ -33,6 +33,12 @@ st.markdown("""
 # ==========================================
 # 🔑 SETTINGS
 # ==========================================
+# Mengambil API Key dari Streamlit Secrets
+try:
+    GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
+except KeyError:
+    GROQ_API_KEY = "" # Antisipasi kalau lupa naruh secret
+
 MODEL_ID = "llama-3.1-8b-instant" 
 WHISPER_ID = "whisper-large-v3"
 # ==========================================
@@ -96,8 +102,8 @@ def create_pdf(report_text):
 with st.sidebar:
     st.title("⚙️ Dashboard")
     
-    if GROQ_API_KEY == "gsk_..." or not GROQ_API_KEY:
-        st.error("⚠️ API Key Kosong")
+    if not GROQ_API_KEY:
+        st.error("⚠️ API Key Kosong. Cek menu Secrets di Streamlit!")
         st.stop()
     else:
         st.success("🟢 System Online")
