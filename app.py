@@ -33,7 +33,6 @@ st.markdown("""
 # ==========================================
 # 🔑 SETTINGS
 # ==========================================
-GROQ_API_KEY = "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"  # <--- PASTE API KEY GROQ KAMU DI SINI
 MODEL_ID = "llama-3.1-8b-instant" 
 WHISPER_ID = "whisper-large-v3"
 # ==========================================
